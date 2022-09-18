@@ -32,8 +32,7 @@ p mr_unicorn.say("Hello World")
 #still need to figure out how to make pet bat by default but changeable
 
 class Vampire
-  pet = "bat"
-  def initialize(pet)
+  def initialize(pet = "bat")
     @pet = pet
     @thirsty = true
   end
@@ -43,10 +42,14 @@ class Vampire
   end
 end
 
-dracula = Vampire.new("bat")
+dracula = Vampire.new
 p dracula
 p dracula.drink
 p dracula
+
+damon = Vampire.new("Crow")
+p damon
+
 
 #  Write a Dragon class
 #  it should have a dynamic name attribute (string)
@@ -95,10 +98,10 @@ p trogdor
 #  if not, false.
 
 class Hobbit
-  def initialize(name, disposition)
+  def initialize(name, disposition, age)
     @name = name
     @disposition = disposition
-    @age = 0
+    @age = age
     @is_adult = false
     @is_old = false
     if @name == "Frodo"
@@ -118,9 +121,13 @@ class Hobbit
   end
 end
 
-frodo = Hobbit.new("Frodo", "Adventuruous")
+frodo = Hobbit.new("Frodo", "Adventuruous", 33)
 p frodo
-sam = Hobbit.new("Sam", "Loyal")
+sam = Hobbit.new("Sam", "Loyal", 32)
 p sam
 sam.celebrate_birthday
 p sam
+bilbo = Hobbit.new("Bilbo", "Cantankerous", 111)
+p bilbo
+bilbo.celebrate_birthday
+p bilbo
